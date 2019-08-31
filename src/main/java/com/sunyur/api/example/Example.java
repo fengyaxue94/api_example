@@ -23,13 +23,17 @@ public class Example {
     private static final String APP_KEY = "25667410";
     private static final String APP_SECRET = "1c069a945efecd4fa4d15272f3ef9abf";
 
-//    private static final String APP_KEY = "25647624";
-//    private static final String APP_SECRET = "371c4f954a0ffa84e3810e5cc96c1f3a";
+    /**
+     * 链家test环境的阿里云网关id和秘钥
+     * private static final String APP_KEY = "25647624";
+     * private static final String APP_SECRET = "371c4f954a0ffa84e3810e5cc96c1f3a";
+     */
+
 
     public static void main(String[] args) {
-//        String body = "[{\"code\":\"1\", \"name\":\"张三\", \"status\":1}]";
         /**
          * body：用于存储参数
+         * String body = "[{\"code\":\"1\", \"name\":\"张三\", \"status\":1}]";
          */
         /**
          * 取消订单接口的参数
@@ -38,13 +42,11 @@ public class Example {
         String body = "{\"code\":\"PO1904010023\",\"operatorCode\":\"20358237\"}";
         /**
          * 取消订单接口的参数
-         * 根据creditcode判断该供应商企业是否存在：如果不存在则在company表新增供应商企业，如果存在则只修改purchaser_supplier表
+         * 根据creditcode判断该供应商企业是否存在：如果不存在则在company表新增供应商企业，如果存在则只修改purchaser_supplier表\
+         * String body = "{\"code\":\"00000006num2\",\"name\":\"杭州人力资源test001\",\"simpleName\":\"杭州人力资源test001\",\"creditCode\":\"111111112222000000test_num1\",\"mobile\":\"400-12345679\",\"type\":\"2\",\"status\":\"1\"}";
+         * String body = "[{\"code\":\"2019021900017364\", \"status\":\"1\", \"operatorCode\":\"\", \"reason\":\"\"}]";
+         * String body = "[{\"currencyDescription\":\"币种同步222\",\"currencyName\":\"人民币测试22\",\"currencyCode\":\"CNY\"}]";
          */
-        //String body = "{\"code\":\"00000006num2\",\"name\":\"杭州人力资源test001\",\"simpleName\":\"杭州人力资源test001\",\"creditCode\":\"111111112222000000test_num1\",\"mobile\":\"400-12345679\",\"type\":\"2\",\"status\":\"1\"}";
-//        String body = "[{\"code\":\"2019021900017364\", \"status\":\"1\", \"operatorCode\":\"\", \"reason\":\"\"}]";
-//        String body = "[{\"currencyDescription\":\"币种同步222\",\"currencyName\":\"人民币测试22\",\"currencyCode\":\"CNY\"}]";
-
-
         try {
             /**
              * HttpPost httpPost = new HttpPost("http://test.api.sunyur.com/api/purchaser/user/save");
