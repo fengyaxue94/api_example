@@ -21,12 +21,10 @@ public class SYAPIUtils {
     private static final String ENCODING = "UTF-8";
 
     private static final String HMACSHA256 = "HmacSHA256";
-
     private static final String HTTP_HEADER_ACCEPT = "Accept";
     private static final String HTTP_HEADER_CONTENT_MD5 = "Content-MD5";
     private static final String HTTP_HEADER_CONTENT_TYPE = "Content-Type";
     private static final String HTTP_HEADER_DATE = "Date";
-
     public static final String sign(String appSecret, String httpMethod, String path, Map<String, String> headers, String body){
         try {
             Mac hmacSha256 = Mac.getInstance(HMACSHA256);

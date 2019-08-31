@@ -9,7 +9,6 @@ import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
 
 import java.io.IOException;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -47,22 +46,22 @@ public class Example {
 
 
         try {
-//            HttpPost httpPost = new HttpPost("http://test.api.sunyur.com/api/purchaser/user/save");
-//            HttpPost httpPost = new HttpPost("http://api.sunyur.com/api/purchaser/user/login");
-//            HttpPost httpPost = new HttpPost("http://api.sunyur.com/api/purchaser/invoice_order/detail");
+            /**
+             * HttpPost httpPost = new HttpPost("http://test.api.sunyur.com/api/purchaser/user/save");
+             * HttpPost httpPost = new HttpPost("http://api.sunyur.com/api/purchaser/user/login");
+             * HttpPost httpPost = new HttpPost("http://api.sunyur.com/api/purchaser/invoice_order/detail");
+             */
             /**
              * 请求处理接口：取消订单
-             *
              */
             HttpPost httpPost = new HttpPost("http://test.api.sunyur.com/api/purchaser/order/cancel");
             /**
              * 加收供应商主体信息的联系电话和状态
-
-            HttpPost httpPost = new HttpPost("http://test.api.sunyur.com/api/purchaser/supplier/save");
+             * HttpPost httpPost = new HttpPost("http://test.api.sunyur.com/api/purchaser/supplier/save");
              */
             httpPost.setEntity(new StringEntity(body, "UTF-8"));
             httpPost.addHeader("X-Ca-Key", APP_KEY);
-            httpPost.addHeader("X-Ca-Timestamp", String.valueOf(new Date().getTime()));
+            //httpPost.addHeader("X-Ca-Timestamp", String.valueOf(new Date().getTime()));
             httpPost.addHeader("Content-Type", "application/json;charset=UTF-8");
             Map<String, String> headers = new HashMap<>();
             for(Header header : httpPost.getAllHeaders()){

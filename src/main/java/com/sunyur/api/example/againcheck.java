@@ -1,4 +1,5 @@
 package com.sunyur.api.example;
+
 import org.apache.http.Header;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
@@ -11,6 +12,13 @@ import java.io.IOException;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
+
+/**
+ * @author yaxue.feng
+ * @version 1.0
+ * @Description:
+ * @date 2019/1/3
+ */
 
 public class againcheck {
     /**
@@ -37,26 +45,27 @@ public class againcheck {
          * 再来一单接口的参数
          */
         String body = "{\"mallSkus\":[{\"itemSkuId\":\"2673\",\"amount\":\"100.01\"},{\"itemSkuId\":\"2672\",\"amount\":\"100.32\"},{\"itemSkuId\":\"2240\",\"amount\":\"100\"}],\"userCode\":\"ZL43653\"}";
-
-        //String body = "{\"code\":\"00000006num2\",\"name\":\"杭州人力资源test001\",\"simpleName\":\"杭州人力资源test001\",\"creditCode\":\"111111112222000000test_num1\",\"mobile\":\"400-12345679\",\"type\":\"2\",\"status\":\"1\"}";
-//        String body = "[{\"code\":\"2019021900017364\", \"status\":\"1\", \"operatorCode\":\"\", \"reason\":\"\"}]";
-//        String body = "[{\"currencyDescription\":\"币种同步222\",\"currencyName\":\"人民币测试22\",\"currencyCode\":\"CNY\"}]";
-
-
+        /**
+         * String body = "{\"code\":\"00000006num2\",\"name\":\"杭州人力资源test001\",\"simpleName\":\"杭州人力资源test001\",\"creditCode\":\"111111112222000000test_num1\",\"mobile\":\"400-12345679\",\"type\":\"2\",\"status\":\"1\"}";
+         * String body = "[{\"code\":\"2019021900017364\", \"status\":\"1\", \"operatorCode\":\"\", \"reason\":\"\"}]";
+         * String body = "[{\"currencyDescription\":\"币种同步222\",\"currencyName\":\"人民币测试22\",\"currencyCode\":\"CNY\"}]";
+         */
         try {
-//            HttpPost httpPost = new HttpPost("http://test.api.sunyur.com/api/purchaser/user/save");
-//            HttpPost httpPost = new HttpPost("http://api.sunyur.com/api/purchaser/user/login");
-//            HttpPost httpPost = new HttpPost("http://api.sunyur.com/api/purchaser/invoice_order/detail");
+            /**
+             * HttpPost httpPost = new HttpPost("http://test.api.sunyur.com/api/purchaser/user/save");
+             * HttpPost httpPost = new HttpPost("http://api.sunyur.com/api/purchaser/user/login");
+             * HttpPost httpPost = new HttpPost("http://api.sunyur.com/api/purchaser/invoice_order/detail");
+             */
+
             /**
              * 请求处理接口：再来一单
-             *
+             * 对ap返回的商品数据进行check验证：商品所属租户、采购组织、起订量、商品上下架状态
              */
             HttpPost httpPost = new HttpPost("http://dev.api.sunyur.com/api/shoppingcart/again/check");
             /**
-             * 加收供应商主体信息的联系电话和状态
+             * 设置请求参数信息
              */
             httpPost.setEntity(new StringEntity(body, "UTF-8"));
-            //
             /**
              * httpPost.addHeader("X-Ca-Key", APP_KEY);
              * 智联里header部分参数是：X-Ca-AppId
